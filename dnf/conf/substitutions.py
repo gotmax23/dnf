@@ -60,7 +60,7 @@ class Substitutions(dict):
                             val = fp.readline()
                         if val and val[-1] == '\n':
                             val = val[:-1]
-                    except (OSError, IOError):
+                    except (OSError, IOError, UnicodeDecodeError):
                         continue
                 if val is not None:
                     self[fsvar] = val
